@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>iB::iB Code Panel - Menu</title>
+<META http-equiv="Content-Type" content="text/html;charset=windows-1251">
+<link rel="stylesheet" href="style.css">
+<script language="javascript"><!--
+function nav(x) {
+  if (x) { parent.frames["main"].history.go(-1); }
+  else { parent.frames["main"].location = 'topics.htm'; }
+}
+function titleText(text) {
+  var html = '<b style="font-family:Verdana,Arial,Helvetica;font-size:10pt;">' + text + '</b>&nbsp;';
+  if (document.layers) {
+    var layer = document.layers["titlePos"].document.layers["title"].document;
+    layer.open(); layer.write('&nbsp;' + html); layer.close();
+  } else if (document.all) {
+    document.all["title"].innerHTML = html;
+  } else if (window.sidebar) {
+    document.getElementById("title").innerHTML = html;
+  }
+}
+//--></script>
+</head>
+<body bgcolor="#ffffcc" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" rightmargin="0" onload="window.focus();">
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr bgcolor="#cccccc">
+<td rowspan="2" width="1%"><form>
+<input type="button" class="help" value="Topics" onclick="nav(0)"><input type="button" class="help" value="Back" onclick="nav(1)">
+</td></form>
+
+<td align="right" width="99%"><script language="javascript"><!--
+if (document.layers) {
+document.write('<ilayer width="100" id="titlePos"><layer id="title"></layer></ilayer>');
+} else { document.write('<span id="title" style="width:100px;"></span>'); }
+//--></script></td>
+
+</tr><tr bgcolor="#000000">
+<td><img src="pixel.gif" height="1" width="1"></td>
+</tr></table>
+</body>
+</html>
